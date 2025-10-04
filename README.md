@@ -1,19 +1,14 @@
-# Please ignore any tutorials or guides that brought you here, 
+# Innioasis Updater is the official firmware installation tool for the Innioasis Y1, built by Y1 users, for Y1 users. To get started with Innioasis Updater, or if you're looking for firmware downloads or updates for another Innioasis device, please head to [innioasis.com/pages/download](https://innioasis.com/pages/download)
 
-# take care to ensure you use the www.innioasis.app website to install the app. 
-
-[<img src="https://innioasis.app/start_here.png" alt="Innioasis Updater Screenshot"/>](https://innioasis.app)
 [<img src="https://innioasis.app/mtkclient/gui/images/screenshot.jpg" alt="Innioasis Updater Screenshot"/>](https://innioasis.app)
 
 # Innioasis Updater
 <img src="mtkclient/gui/images/icon.png" alt="Innioasis Updater Icon" width="128"/>
-Innioasis Updater is an easy, one-click firmware installer for the Innioasis Y1 MP3 player running Android firmwares. It is a modification of mtkclient to enable the installation of Updates, Factory Restore and installation of Custom Firmwares like the Multiwirth ROM with Rockbox.
+Innioasis Updater is an easy, one-click firmware installer for the Innioasis Y1 MP3 player running Android firmwares. It lists official software updates as well as community built firmwares.
 
 # [Download and guide for Mac and Windows at Innioasis.app](https://innioasis.app)
 
-
-
-## Devloped using Cursor IDE by
+## Devloped in Python using Cursor IDE by
 - Ryan Specter of Team Slide
 
 ## Special Thanks to
@@ -21,16 +16,13 @@ Innioasis Updater is an easy, one-click firmware installer for the Innioasis Y1 
 ### Team Slide branding lead
 - u/_allstar
   
-### r/innioasis Mods
-- u/wa-a-melyn
-- u/TwitchyMcJoe
-- u/Key-Brilliant5623
+### the r/innioasis community and Mods
 
 ### ROM Developer
  - [@Multiwirth](https://www.github.com/multiwirth)
 
 ### Rockbox Y1 Port Developer and custom ROM packager
- - [@rockbox-y1 (u/After-Acanthaceae547)](https://www.github.com/rockbox-y1)
+ - [@rockbox-y1](https://www.github.com/rockbox-y1)
  ### TikTok / YouTube creators
 - Ryan /@catsteal3r on TikTok
 - Corduroy cat - YouTuber
@@ -43,81 +35,12 @@ Innioasis Updater is an easy, one-click firmware installer for the Innioasis Y1 
 - Chaosmaster
 - Geert-Jan Kreileman (MTKclient GUI, design & fixes)
 
-## Installing on Linux
+## Installing on Linux (Not officially supported - you're on you're own)
 
-### Linux - (Ubuntu recommended)
+Please clone the repo on your linux system and follow the [MTKclient setup instructions](https://github.com/bkerler/mtkclient), once you've completed the setup process for MTKclient, simply open a terminal window, change into the directory you cloned Innioasis Updater into and run the command below.
 
-#### Install python >=3.8, git and other deps
-
-#### For Debian/Ubuntu
-```
-sudo apt install python3 git libusb-1.0-0 python3-pip android-sdk-platform-tools
-```
-#### For ArchLinux
-```
-(sudo) pacman -S  python python-pip python-pipenv git libusb
-```
-or
-```
-yay -S python python-pip git libusb
-```
-
-#### For Fedora
-```
-sudo dnf install python3 git libusb1 android-tools
-```
-
-#### Grab files
-```
-git clone https://github.com/team-slide/Innioasis-Updater
-cd Innioasis-Updater
-pip3 install -r requirements.txt
-pip3 install .
-```
-
-### Using venv
-```
-python3 -m venv ~/.venv
-git clone https://github.com/team-slide/Innioasis-Updater
-cd Innioasis-Updater
-. ~/.venv/bin/activate
-pip install -r requirements.txt
-pip install .
-```
-
-#### Install rules
-```
-sudo usermod -a -G plugdev $USER
-sudo usermod -a -G dialout $USER
-sudo cp mtkclient/Setup/Linux/*.rules /etc/udev/rules.d
-sudo udevadm control -R
-sudo udevadm trigger
-```
-Make sure to reboot after adding the user to dialout/plugdev. If the device
-has a vendor interface 0xFF (like LG), make sure to add "blacklist qcaux" to
-the "/etc/modprobe.d/blacklist.conf".
-
----------------------------------------------------------------------------------------------------------------
-## Usage
-### Activating your venv
-In order to activate your venv you'll need to run these commands
-```
-. ~/.venv/bin/activate
-```
-You should see something like this...
-```
-(.venv) [user@hostname]$ 
-```
-This means you are on venv folder!
-
-### Using Innioasis Updater on Linux:
-To start installing firmwares:
 ```
 python updater.py
-```
-or:
-```
-python3 updater.py
 ```
 
 
